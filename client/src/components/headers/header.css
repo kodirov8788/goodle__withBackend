@@ -1,0 +1,218 @@
+.header__language {
+  position: relative;
+  z-index: 101;
+  top: 10px;
+  right: 10px;
+}
+
+.header {
+  min-height: 100px;
+  width: 100%;
+  /* overflow: hidden; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  /* border: 1px solid rgb(22, 15, 15); */
+  position: relative;
+  list-style: none;
+  position: fixed;
+  top: 0;
+  padding: 0 6%;
+  left: 0;
+  z-index: 100;
+  transition: all 0.25s linear;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+.header__black {
+  background-color: #f6f6f6;
+}
+
+.header__black .logo a {
+  font-size: 30px;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  /* color: #fff !important; */
+}
+/* .header__black a {
+  color: #fff;
+} */
+.logo a {
+  font-size: 30px;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+.dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--main-color);
+  margin-bottom: 5px;
+  border-radius: 50%;
+  left: 135px;
+  margin-left: 10px;
+}
+header a {
+  text-transform: uppercase;
+  margin-right: 20px;
+  color: #555;
+}
+
+header ul {
+  display: flex;
+}
+header ul li {
+  display: inline-block;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--main-transition);
+}
+header ul li:hover {
+  transform: scale(1.05);
+}
+
+header ul li:hover a {
+  color: #000;
+}
+header ul li span {
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  margin-right: 5px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  color: rgb(0, 0, 36, 0.7);
+  cursor: pointer;
+  background-color: var(--main-btnColor);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.menu {
+  display: none;
+}
+.cart__icon {
+  position: relative;
+  margin-right: 20px;
+  transition: var(--main-transition);
+}
+.cart__icon:hover {
+  transform: scale(1.05);
+}
+.cart__icon:hover a {
+  color: #000;
+}
+
+.cart__icon a {
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  margin-right: 5px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  background-color: var(--main-btnColor);
+  color: rgb(0, 0, 36, 0.7);
+
+  cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.cart__icon span {
+  background: crimson;
+  border-radius: 20px;
+  color: white;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  padding: 5px 7px;
+  font-size: 10px;
+}
+
+.header__logout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__logout span {
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  margin-right: 5px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.header__logoutEmail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header__logoutEmail strong {
+  font-size: 18px;
+  color: #faad3d;
+}
+.header__history {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__history span {
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  margin-right: 5px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+/* ------------ header collection -------------- */
+.header__collectionItem {
+  display: none;
+}
+@media (max-width: 720px) {
+  .header__collectionItem {
+    display: block;
+  }
+  .header__product {
+    display: none;
+  }
+  .header__history {
+    display: none;
+  }
+}
+
+/* ------------------------ header category------------------- */
+.header__filter {
+  transform: translateY(-200px);
+  width: 50%;
+  transition: all 0.3s linear;
+}
+.header__black .header__filter {
+  transform: translateY(0px);
+  display: flex;
+  /* width: 50%; */
+  /* border: 1px solid #000; */
+}
+.header__filter .filter__input {
+  width: 80%;
+  background-color: #fff;
+}

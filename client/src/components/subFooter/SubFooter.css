@@ -1,0 +1,34 @@
+.subFooter {
+  width: 100%;
+  height: 280px;
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subFooter__container {
+  width: var(--main-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.subfooter__box {
+  width: 270px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 4px;
+}
+.subfooter__box:hover svg {
+  transform: scale(1.05);
+}
+.subfooter__box svg {
+  transition: var(--main-transition);
+
+  font-size: 100px;
+  width: 120px;
+  margin: 0 20px;
+  color: #feb53e;
+}
