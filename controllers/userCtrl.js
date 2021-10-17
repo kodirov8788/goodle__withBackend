@@ -124,6 +124,24 @@ const userCtrl = {
       return res.status(500).json({ msg: err.message });
     }
   },
+  addOrder: async (req, res) => {
+    try {
+      const user = await Users.findById(req.user.id);
+      if (!user) return res.status(400).json({ msg: "User does not exist." });
+
+      await Users.findOneAndUpdate(
+        { _id: req.user.id },
+        {
+          order: req.body.order,
+        }
+      );
+
+      return res.json({ msg: "Added to order" });
+    } catch (err) {
+      return res.status(500).json({ msg: err.message });
+    }
+  },
+
   history: async (req, res) => {
     try {
       const history = await Payments.find({ user_id: req.user.id });

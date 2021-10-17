@@ -3,6 +3,7 @@
   --main-width: 1230px;
   --main-btnColor: #f3ad45;
   --main-transition: all 0.25s ease-in-out;
+  --border--test: 5px solid red;
 }
 
 * {

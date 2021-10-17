@@ -2,7 +2,6 @@ import React, { useContext, useState, useEffect } from "react";
 import { GlobalState } from "../../../GlobalState";
 import axios from "axios";
 import PaypalButton from "./PaypalButton";
-import "./cart.css";
 import { FaTimesCircle } from "react-icons/fa";
 
 function Cart() {
@@ -69,12 +68,10 @@ function Cart() {
     }
   };
 
-  const tranSuccess = async (payment) => {
-    const { paymentID, address } = payment;
-
+  const tranSuccess = async () => {
     await axios.post(
       "/api/payment",
-      { cart, paymentID, address },
+      { cart, total },
       {
         headers: { Authorization: token },
       }
@@ -118,7 +115,10 @@ function Cart() {
 
       <div className="total">
         <h3>Total: $ {total}</h3>
-        <PaypalButton total={total} tranSuccess={tranSuccess} />
+        <button className="payment__btn" onClick={tranSuccess}>
+          order
+        </button>
+        {/* <PaypalButton total={total} tranSuccess={tranSuccess} /> */}
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ function UserAPI(token) {
   const [isLogged, setIsLogged] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [cart, setCart] = useState([]);
+  // const [order, setOrder] = useState([]);
   const [userEmail, setUserEmail] = useState([]);
   const [history, setHistory] = useState([]);
   useEffect(() => {

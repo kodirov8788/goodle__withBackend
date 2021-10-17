@@ -6,7 +6,6 @@ import Cart from "./icon/cart.svg";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { BsPerson } from "react-icons/bs";
-import { MdHistoryToggleOff } from "react-icons/md";
 import { BiShoppingBag } from "react-icons/bi";
 import { BsCartPlus, BsSearch, BsThreeDots } from "react-icons/bs";
 import { useTranslation } from "react-i18next";
@@ -86,12 +85,12 @@ function Header() {
             </div>
           </Link>
         </li>
-        {/* <li className="header__history">
+        <li className="header__history">
           <span>
-            <MdHistoryToggleOff />
+            <BiShoppingBag />
           </span>
           <Link to="/history">History</Link>
-        </li> */}
+        </li>
       </>
     );
   };
@@ -152,12 +151,12 @@ function Header() {
           <a href="#">About us</a>
         </li>
 
-        <li className="header__product">
+        {/* <li className="header__product">
           <span>
             <BiShoppingBag />
           </span>
           <Link to="/">{isAdmin ? "Products" : "Shop"}</Link>
-        </li>
+        </li> */}
 
         <li onClick={() => setMenu(!menu)}>
           <img src={Close} alt="" width="30" className="menu" />
