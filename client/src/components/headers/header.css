@@ -10,7 +10,7 @@
   width: 100%;
   /* overflow: hidden; */
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: space-around;
   align-items: center;
   /* border: 1px solid rgb(22, 15, 15); */
@@ -27,6 +27,8 @@
 }
 .header__black {
   background-color: #f6f6f6;
+  /* border-bottom: 2px solid #ccc; */
+  box-shadow: 0 3px 3px #ccc;
 }
 
 .header__black .logo a {
@@ -36,9 +38,14 @@
   align-items: flex-end;
   /* color: #fff !important; */
 }
-/* .header__black a {
-  color: #fff;
-} */
+.header__category {
+  /* border: 2px solid rgb(206, 17, 17); */
+  display: flex;
+  width: 150px;
+}
+.header__search {
+  width: 300px !important;
+}
 .logo a {
   font-size: 30px;
   flex: 1;
@@ -51,7 +58,7 @@
   width: 10px;
   height: 10px;
   background: var(--main-color);
-  margin-bottom: 5px;
+  margin-bottom: 20px;
   border-radius: 50%;
   left: 135px;
   margin-left: 10px;
@@ -67,7 +74,7 @@ header ul {
 }
 header ul li {
   display: inline-block;
-  padding: 0 20px;
+  padding: 0 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,6 +101,16 @@ header ul li span {
   background-color: var(--main-btnColor);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.header__phoneNumber {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 20px;
+}
+.header__phoneNumber h5 {
+  margin-right: 10px;
+  white-space: normal;
 }
 
 .menu {

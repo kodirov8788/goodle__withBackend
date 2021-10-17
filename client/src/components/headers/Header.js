@@ -11,6 +11,8 @@ import { BiShoppingBag } from "react-icons/bi";
 import { BsCartPlus, BsSearch, BsThreeDots } from "react-icons/bs";
 import { useTranslation } from "react-i18next";
 import I18n from "../../I18n";
+import Category from "../filter/category/Category";
+import Search from "../filter/search/Search";
 
 function Header() {
   const { t, i18n } = useTranslation();
@@ -42,7 +44,7 @@ function Header() {
   };
 
   const transitionNavbar = () => {
-    if (window.scrollY > 70) {
+    if (window.scrollY > 100) {
       setShow(true);
     } else {
       setShow(false);
@@ -84,12 +86,12 @@ function Header() {
             </div>
           </Link>
         </li>
-        <li className="header__history">
+        {/* <li className="header__history">
           <span>
             <MdHistoryToggleOff />
           </span>
           <Link to="/history">History</Link>
-        </li>
+        </li> */}
       </>
     );
   };
@@ -110,43 +112,19 @@ function Header() {
           <span className="dot"></span>
         </Link>
       </div>
-      {/* ---------------------------- Category----------------------- */}
+      <div className="header__phoneNumber">
+        {!show && <h5>{t("Contact__Number")} : </h5>}
 
-      {/* <div className="header__filter">
-        <div
-          className="filter__categories"
-          onMouseOver={() => setStatus(true)}
-          onMouseLeave={() => setStatus(false)}
-        >
-          <BsThreeDots />
-          <div className="filter__categoryText">
-            <p> {category !== "" ? category : "Category"}</p>
+        <h3>(93)942-7899</h3>
+      </div>
+      {show && (
+        <>
+          <div className="header__category">
+            <Category />
           </div>
-          <div
-            className={status ? "filter__adderStatus" : "filter__categotyHide"}
-          >
-            {categories.map((category) => (
-              <li
-                className="filter__selectItem"
-                onClick={() => setCategory(category.name)}
-                key={category.id}
-              >
-                {category.name}
-              </li>
-            ))}
-          </div>
-        </div>
-        <div className="filter__input">
-          <input
-            type="text"
-            value={search}
-            placeholder="Enter your search!"
-            onChange={(e) => setSearch(e.target.value.toLowerCase())}
-          />
-          <BsSearch />
-        </div>
-      </div> */}
-
+          <Search />
+        </>
+      )}
       <ul style={styleMenu}>
         {isAdmin && adminRouter()}
 

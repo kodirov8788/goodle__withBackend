@@ -9,6 +9,7 @@ import SubFooter from "./components/subFooter/SubFooter";
 import Banner from "./components/banner/Banner";
 import Filters from "./components/filter/Filters";
 import I18n from "./I18n";
+import Fires from "./Fires";
 
 function App() {
   return (
@@ -17,8 +18,9 @@ function App() {
         <div classNameName="App">
           <I18n />
           <Header />
+          {/* <Fires /> */}
           <Filters />
-          <Banner />
+          {/* <Banner /> */}
           <Pages />
           <SubFooter />
           <MediaFooter />

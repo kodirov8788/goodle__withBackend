@@ -13,28 +13,28 @@ const SubFooter = () => {
           <MdOutlineColorLens />
           <div className="subfooter__text">
             <h2>Salom</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            <p>Lorem ipsum dolor adipisicing elit.</p>
           </div>
         </div>
         <div className="subfooter__box">
           <FaShippingFast />
           <div className="subfooter__text">
-            <h2>Salom</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            <h3>Salom</h3>
+            <p>Lorem ipsum dolor adipisicing elit.</p>
           </div>
         </div>
         <div className="subfooter__box">
           <BsShieldLock />
           <div className="subfooter__text">
             <h2>Salom</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            <p>Lorem ipsum dolor adipisicing elit.</p>
           </div>
         </div>
         <div className="subfooter__box">
           <BiChat />
-          <div className="subfooter__text">
+          <div className="subfooter_text">
             <h2>Salom</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            <p>Lorem ipsum dolor adipisicing elit.</p>
           </div>
         </div>
       </div>

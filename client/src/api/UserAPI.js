@@ -30,7 +30,7 @@ function UserAPI(token) {
   }, [token]);
 
   const addCart = async (product) => {
-    if (!isLogged) return alert("Please login to continue buying");
+    // if (!isLogged) return alert("Please login to continue buying");
 
     const check = cart.every((item) => {
       return item._id !== product._id;

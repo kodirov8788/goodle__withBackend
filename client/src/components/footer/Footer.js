@@ -80,8 +80,9 @@ const Footer = () => {
               alt=""
             />
             <img
-              src="https://logobank.uz:8005/media/logos_png/Uzcard-01.png"
+              src="/assets/uzcard.svg"
               alt=""
+              style={{ marginTop: "10px" }}
             />
             <img
               src="https://www.fibernet.uz/wp-content/uploads/apelsin-logo.png"

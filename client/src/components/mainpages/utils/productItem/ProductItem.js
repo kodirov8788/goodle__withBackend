@@ -1,5 +1,6 @@
 import React from "react";
 import BtnRender from "./BtnRender";
+import { sortFunction } from "../../../filter/Filters";
 
 function ProductItem({ product, isAdmin, deleteProduct, handleCheck }) {
   return (

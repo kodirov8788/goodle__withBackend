@@ -7,6 +7,8 @@ import axios from "axios";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import Sort from "../../filter/sort/Sort";
+import Banner from "../../banner/Banner";
 
 function Products() {
   const settings = {
@@ -53,7 +55,10 @@ function Products() {
   const [isAdmin] = state.userAPI.isAdmin;
   const [token] = state.token;
   const [category] = state.productsAPI.category;
-
+  const [search] = state.productsAPI.search;
+  const [sort] = state.productsAPI.sort;
+  console.log(sort);
+  console.log(search);
   ///////////////////////////////////////////////////////////////
   const [categoryName, setCategoryName] = useState([]);
   // console.log(categoryName);
@@ -77,8 +82,7 @@ function Products() {
     });
     setProducts([...products]);
   };
-  //   const x = products.map((item) => item.category);
-  //   console.log(products);
+
   const deleteProduct = async (id, public_id) => {
     try {
       setLoading(true);
@@ -124,55 +128,64 @@ function Products() {
   //   );
   return (
     <>
-      <div className="product__top">
-        {isAdmin && (
-          <div className="delete-all">
-            <span>Select all</span>
-            <input type="checkbox" checked={isCheck} onChange={checkAll} />
-            <button onClick={deleteAll}>Delete ALL</button>
-          </div>
-        )}
-        {category === "" ? (
-          <div className="products">
-            <div className="products__container">
+      <Banner />
+      {isAdmin && (
+        <div className="delete-all">
+          <span>Select all</span>
+          <input type="checkbox" checked={isCheck} onChange={checkAll} />
+          <button onClick={deleteAll}>Delete ALL</button>
+        </div>
+      )}
+      {category + search + sort === "" ? (
+        <div className="products">
+          <div className="products__container">
+            {/* <> */}
+            <div className="product__texts">
               <h1>Technologies</h1>
-              <Slider {...settings}>
-                {categoryName.map((product) => {
-                  if (product.category === "615e2accc24f1c1b8160f968") {
-                    return (
-                      <ProductItem
-                        key={product._id}
-                        product={product}
-                        isAdmin={isAdmin}
-                        deleteProduct={deleteProduct}
-                        handleCheck={handleCheck}
-                      />
-                    );
-                  }
-                })}
-              </Slider>
+              <Sort />
             </div>
-
-            <div className="products__container">
-              <h1>Oyoq kiyim</h1>
-              <Slider {...settings}>
-                {categoryName.map((product) => {
-                  if (product.category === "615fcf28fd1b2d1f6f48d60f") {
-                    return (
-                      <ProductItem
-                        key={product._id}
-                        product={product}
-                        isAdmin={isAdmin}
-                        deleteProduct={deleteProduct}
-                        handleCheck={handleCheck}
-                      />
-                    );
-                  }
-                })}
-              </Slider>
-            </div>
+            {/* </> */}
+            <Slider {...settings}>
+              {categoryName.map((product) => {
+                if (product.category === "615e2accc24f1c1b8160f968") {
+                  return (
+                    <ProductItem
+                      key={product._id}
+                      product={product}
+                      isAdmin={isAdmin}
+                      deleteProduct={deleteProduct}
+                      handleCheck={handleCheck}
+                    />
+                  );
+                }
+              })}
+            </Slider>
           </div>
-        ) : (
+
+          <div className="products__container">
+            <h1>Oyoq kiyim</h1>
+            <Slider {...settings}>
+              {categoryName.map((product) => {
+                if (product.category === "615fcf28fd1b2d1f6f48d60f") {
+                  return (
+                    <ProductItem
+                      key={product._id}
+                      product={product}
+                      isAdmin={isAdmin}
+                      deleteProduct={deleteProduct}
+                      handleCheck={handleCheck}
+                    />
+                  );
+                }
+              })}
+            </Slider>
+          </div>
+        </div>
+      ) : (
+        <>
+          <div className="product__texts__search">
+            <Sort />
+          </div>
           <div className="products__all">
             {products.map((product) => {
               return (
@@ -187,10 +200,10 @@ function Products() {
             })}
             {/* <LoadMore /> */}
           </div>
-        )}
+        </>
+      )}
 
-        {/* {products.length === 0 && <Loading />} */}
-      </div>
+      {/* {products.length === 0 && <Loading />} */}
     </>
   );
 }

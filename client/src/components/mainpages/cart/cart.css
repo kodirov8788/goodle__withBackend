@@ -1,7 +1,24 @@
 .cart {
+  display: flex;
+  /* justify-content: space-between; */
+  /* border: 3px solid rgb(105, 30, 30); */
+  height: 300px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.box__detail {
+  width: 50%;
+  /* margin: 0 auto; */
+  /* border: 3px solid rgb(105, 30, 30); */
   position: relative;
-  border: 1px solid #ccc;
-  transform: scaleY(0.98);
+}
+.cart img {
+  object-fit: cover;
+  width: 350px;
+  height: 200px;
+  border-radius: 10px;
+  /* border: 3px solid rgb(105, 30, 30); */
+  margin: auto 50px auto 0;
 }
 .amount span {
   color: crimson;
@@ -16,17 +33,45 @@
   position: absolute;
   top: 0;
   right: 5px;
-  color: crimson;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 3px solid rgb(105, 30, 30); */
+  color: var(--main-color);
   font-weight: 900;
   cursor: pointer;
 }
 .total {
-  width: 100%;
+  width: 50%;
   height: 50px;
+  border: 3px solid rgb(105, 30, 30);
+  margin-left: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .total h3 {
   color: crimson;
+}
+
+.payment__btn {
+  width: 50px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  border-radius: 4px;
+  background-color: var(--main-btnColor);
+  transition: all 0.255s ease-in-out;
+}
+.payment__btn:hover {
+  transform: translateY(-3px);
+}
+.payment__btn a {
+  color: #000;
+}
+.payment__btn a:hover {
+  color: #000;
 }

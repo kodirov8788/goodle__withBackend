@@ -6,17 +6,19 @@ function Banner() {
   const BANNER_DATA = [
     {
       id: 0,
-      imageURL: "https://m.media-amazon.com/images/I/61jovjd+f9L._SX3000_.jpg",
+      imageURL: "https://cdn.mos.cms.futurecdn.net/zDVBgqfuesBrQDkptZPzw5.png",
       imageDesc: "Shop and Toys",
     },
     {
       id: 1,
-      imageURL: "https://m.media-amazon.com/images/I/711Y9Al9RNL._SX3000_.jpg",
+      imageURL:
+        "https://www.ixbt.com/img/n1/news/2021/9/4/acBook-Pro-M1X_large.jpg",
       imageDesc: "Shop and Toys",
     },
     {
       id: 2,
-      imageURL: "https://m.media-amazon.com/images/I/61CiqVTRBEL._SX3000_.jpg",
+      imageURL:
+        "https://images-prod.healthline.com/hlcmsresource/images/AN_images/healthy-eating-ingredients-1296x728-header.jpg",
       imageDesc: "Shop and Toys",
     },
     {
@@ -27,21 +29,7 @@ function Banner() {
   ];
 
   const [imageIndex, SetImageIndex] = useState(0);
-  // const slideToRight = ()=>{
-  //     if(imageIndex >= BANNER_DATA.length - 1){
-  //         SetImageIndex(0)
-  //     }else{
-  //         SetImageIndex(prev => prev + 1)
-  //     }
-  // }
-  // const slideToLeft = ()=>{
-  //     if(imageIndex === 0){
-  //         SetImageIndex(BANNER_DATA.length - 1)
-  //     }else{
-  //         SetImageIndex(prev => prev - 1)
-  //     }
 
-  // }
   useEffect(() => {
     const lastIndex = BANNER_DATA.length - 1;
     if (imageIndex < 0) {

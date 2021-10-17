@@ -26,12 +26,12 @@ const I18n = () => {
     .use(initReactI18next)
     .use(HttpApi)
     .init({
-      // debug: true,
+      debug: true,
       supportedLngs: ["en", "uz"],
       fallbackLng: "en",
       detection: {
-        order: ["htmlTag", "cookie", "localStorage", "path", "subdomain"],
-        caches: ["localStorage", "cookie"],
+        order: ["htmlTag", "localStorage", "cookie", "path", "subdomain"],
+        caches: ["cookie", "localStorage"],
       },
       backend: {
         loadPath: "/assets/locales/{{lng}}/translation.json",
